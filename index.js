@@ -19,6 +19,6 @@ app.post('/contact-info', (req, res) => {
     const memory = req.body.conversation.memory;
     const state= memory.state;
     const district = memory.district;
-
+});
 
 app.listen(port, () => console.log(`App started on port ${port}`));
