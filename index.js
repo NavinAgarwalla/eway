@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const discoverMovie = require('./file.js');
+const contactinfo = require('./file.js');
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,6 +19,9 @@ app.post('/contact-info', (req, res) => {
     const memory = req.body.conversation.memory;
     const state= memory.state;
     const district = memory.district;
+    contactinfo(state,district).then((data)=>{
+        res.json({replies:data});
+    });
 });
 
 app.listen(port, () => console.log(`App started on port ${port}`));

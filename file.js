@@ -1,9 +1,7 @@
 const axios = require('axios');
 function contactinfo(state,district) 
 {
-
-		var state = req.body.conversation.memory.State;
-		var district = req.body.conversation.memory.district;	
+  
     return axios.get(`http://192.168.2.11:7001/sap/opu/odata/sap/ZEWAYBILL_CONTACT_SRV/getContactListSet?$filter=State eq '"+ state +"' and District eq '" + district + "'`,
     {
       Header : {
@@ -21,9 +19,9 @@ function contactinfo(state,district)
         content: {
           title: 'Sorry, but I could not find any results for your request :(',
           buttons: [{ title: 'Start over', value: 'Start over' }],
-                 },
-               }];
-                        }
+        }
+        }];
+    }
     const cards = results.slice(0, 10).map(navin => ([
     	 {type :'text', content : navin.State},
     	 {type :'text', content : navin.District},
@@ -46,3 +44,5 @@ function contactinfo(state,district)
     ];
   });
 }
+
+module.exports = contactinfo;
