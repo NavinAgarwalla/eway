@@ -24,7 +24,7 @@ function contactinfo(state,district)
                  },
                }];
                         }
-    const cards = results.slice(0, 10).map(navin => ({
+    const cards = results.slice(0, 10).map(navin => ([
     	 {type :'text', content : navin.State},
     	 {type :'text', content : navin.District},
     	 {type :'text', content : navin.Landline},
@@ -32,7 +32,7 @@ function contactinfo(state,district)
     	 {type :'text', content : navin.Mobile},
     	 {type :'text', content : navin.OfficeHrs},
     	 {type :'text', content : navin.Tollfree},
-        }));
+        ]));
 
     return [
       {
