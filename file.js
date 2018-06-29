@@ -1,8 +1,30 @@
 const axios = require('axios');
 function contactinfo(state,district) 
 {
+
+  $.ajax({
+  url : `http://192.168.2.11:7001/sap/opu/odata/sap/ZEWAYBILL_CONTACT_SRV/getContactListSet?$filter=State eq '"+ state +"' and District eq '" + district + "'`,
+  method : "GET",
+  headers : {
+  "Accept" : "application/json",
+  "Content-Type" : "application/json",
+  "X-Requested-With" : "XMLHttpRequest"
+  },
+  username: 'bcuser',
+  password: 'Password',
+  beforeSend : function(){
+  },
+  success: function(result,response){
+    debugger;
+  },
+  error: function(err){
+    debugger;
+  },
+  complete : function(oXHR,vStatus){
+  }
+});
     
-    return axios.get(`http://192.168.2.11:7001/sap/opu/odata/sap/ZEWAYBILL_CONTACT_SRV/getContactListSet?$filter=State eq '"+ state +"' and District eq '" + district + "'`,
+    /*return axios.get(`http://192.168.2.11:7001/sap/opu/odata/sap/ZEWAYBILL_CONTACT_SRV/getContactListSet?$filter=State eq '"+ state +"' and District eq '" + district + "'`,
     {
       Header : {
 				"Accept" : "application/json",
@@ -42,7 +64,7 @@ function contactinfo(state,district)
         content: cards,
       },
     ];
-  });
+  });*/
 }
 contactinfo("state","district");
 module.exports = contactinfo;
