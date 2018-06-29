@@ -1,6 +1,6 @@
 const axios = require('axios');
 function contactinfo(state,district) 
-{e;
+{
     
     return axios.get(`http://192.168.2.11:7001/sap/opu/odata/sap/ZEWAYBILL_CONTACT_SRV/getContactListSet?$filter=State eq '"+ state +"' and District eq '" + district + "'`,
     {
