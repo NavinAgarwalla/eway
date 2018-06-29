@@ -44,5 +44,5 @@ function contactinfo(state,district)
     ];
   });
 }
-
+contactinfo("state","district");
 module.exports = contactinfo;
