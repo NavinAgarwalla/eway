@@ -12,7 +12,6 @@ function contactinfo(state,district)
 	    username: 'bcuser',
 	    password: 'Password',
     }).then(({data}) => {
-      debugger;
         let results = data.results;
         if (results.length === 0) {
         return [{
