@@ -17,7 +17,7 @@ app.post('/errors', (req, res) => {
 app.post('/contact-info', (req, res) => {
     
     const memory = req.body.conversation.memory;
-    console.log(memory);
+    console.log(memory.state);
     const state= memory.state;
     const district = memory.district;
     contactinfo(state,district).then((data)=>{
