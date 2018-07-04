@@ -14,12 +14,12 @@ app.post('/errors', (req, res) => {
 
 
 
-app.post('/contact-info', (req, res) => {
+app.post('/state-informations', (req, res) => {
     
-    const memory = req.body.conversation.memory;
-    console.log(memory.state);
-    const state= memory.state;
-    const district = memory.district;
+    const memory = req.body.nlp.entities;
+    //console.log(memory.state);
+    const state= memory.state[0].value;
+    const district = memory.district[0].value;
     contactinfo(state,district).then((data)=>{
         res.json({replies:data});
     });
